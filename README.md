@@ -3,9 +3,7 @@ StreamingKNORA
 <br>
 <img src="https://travis-ci.org/ariskk/distributedWekaSpark.svg?branch=master" alt="Build Status" style="max-width:100%;">
 
-This repository contains Map and Reduce Wrappers of <b>Weka</b> classes for the Apache <b>Spark</b> distributed 
-computing framework, as well as a set of utilities and a commmand line interface that enable the execution of Data Mining jobs
-on a Spark cluster.
+This repository contains Streaming-KNORA algorithm for the Apache Spark distributed computing framework, as well as a set of utilities and a commmand line interface that enable the execution of Streaming Data Analysis jobs on a Spark cluster.
 
 This project was developed in the School of Computer Science of the University of Manchester 
 as part of my MSc dissertation under the supervision of Professor John A. Keane (john.keane@manchester.ac.uk).
