@@ -1,0 +1,14 @@
+@relation poker
+@attribute s1 {1,2,3,4}
+@attribute r1 numeric
+@attribute s2 {1,2,3,4}
+@attribute r2 numeric
+@attribute s3 {1,2,3,4}
+@attribute r3 numeric
+@attribute s4 {1,2,3,4}
+@attribute r4 numeric
+@attribute s5 {1,2,3,4}
+@attribute r5 numeric
+@attribute class {0,1,2,3,4,5,6,7,8,9}
+@data
+1,1,1,10,1,11,1,12,2,13,4

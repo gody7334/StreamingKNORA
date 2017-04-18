@@ -1,0 +1,14 @@
+@relation electricity-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0-weka.filters.unsupervised.attribute.ReplaceMissingValues
+
+@attribute date numeric
+@attribute day {1,2,3,4,5,6,7}
+@attribute period numeric
+@attribute nswprice numeric
+@attribute nswdemand numeric
+@attribute vicprice numeric
+@attribute vicdemand numeric
+@attribute transfer numeric
+@attribute class {UP,DOWN}
+
+@data
+0,2,0,0.056443,0.439155,0.003467,0.422915,0.414912,UP

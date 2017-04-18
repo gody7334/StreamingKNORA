@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ted-gao</groupId>
+    <artifactId>scala-java-mix</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Scala-Java mixture</name>
+    <description>Showcase mixing Scala and Java</description>
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <!-- ensure that we use JDK 1.6 -->
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <!-- Run scala compiler in the process-resources phase, so that dependencies on
+                         scala classes can be resolved later in the (Java) compile phase -->
+                    <execution>
+                        <id>scala-compile-first</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        </execution>
+
+                        <!-- Run scala compiler in the process-test-resources phase, so that dependencies on
+                             scala classes can be resolved later in the (Java) test-compile phase -->
+                        <execution>
+                        <id>scala-test-compile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <!-- Add src/main/scala to source path of Eclipse -->
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/scala</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+
+                    <!-- Add src/test/scala to test source path of Eclipse -->
+                    <execution>
+                        <id>add-test-source</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/scala</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- to generate Eclipse artifacts for projects mixing Scala and Java -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                    <projectnatures>
+                        <projectnature>org.scala-ide.sdt.core.scalanature</projectnature>
+                        <projectnature>org.eclipse.jdt.core.javanature</projectnature>
+                    </projectnatures>
+                    <buildcommands>
+                        <buildcommand>org.scala-ide.sdt.core.scalabuilder</buildcommand>
+                    </buildcommands>
+                    <classpathContainers>
+                        <classpathContainer>org.scala-ide.sdt.launching.SCALA_CONTAINER</classpathContainer>
+                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+                    </classpathContainers>
+                    <excludes>
+                        <!-- in Eclipse, use scala-library, scala-compiler from the SCALA_CONTAINER rather than POM <dependency> -->
+                        <exclude>org.scala-lang:scala-library</exclude>
+                        <exclude>org.scala-lang:scala-compiler</exclude>
+                    </excludes>
+                    <sourceIncludes>
+                        <sourceInclude>**/*.scala</sourceInclude>
+                        <sourceInclude>**/*.java</sourceInclude>
+                    </sourceIncludes>
+                </configuration>
+            </plugin>
+
+
+             <!-- maven-assembly-plugin -->
+            <plugin>
+		        <artifactId>maven-assembly-plugin</artifactId>
+		        <version>2.6</version>
+		        <configuration>
+		          <descriptorRefs>
+		            <descriptorRef>jar-with-dependencies</descriptorRef>
+		          </descriptorRefs>
+		          <archive>
+		            <manifest>
+		              <mainClass></mainClass>
+		            </manifest>
+		          </archive>
+		        </configuration>
+		        <executions>
+		          <execution>
+		            <id>make-assembly</id>
+		            <phase>package</phase>
+		            <goals>
+		              <goal>single</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+		      </plugin>
+
+
+            <!-- When run tests in the test phase, include .java and .scala source files -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.8.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                        <include>**/*.scala</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <!-- put nessassary lib in jar
+        <resources>
+	      <resource>
+	        <directory>lib/</directory>
+	      </resource>
+	    </resources>-->
+    </build>
+
+
+    <dependencies>
+        <!-- Scala dependency -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.10.4</version>
+        </dependency>
+
+        <!-- Spark dependency -->
+        <dependency>
+		      <groupId>org.apache.spark</groupId>
+		      <artifactId>spark-core_2.10</artifactId>
+		      <version>1.6.1</version>
+	    </dependency>
+
+	    <!-- Spark streaming dependency -->
+	    <dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming_2.10</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+
+		<!-- Spark sql dependency -->
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-sql_2.10</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+
+		<!-- Spark MLlib dependency -->
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-mllib_2.10</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+
+		<!-- MOA dependency -->
+		<dependency>
+	  		<groupId>nz.ac.waikato.cms.moa</groupId>
+	  		<artifactId>moa</artifactId>
+	  		<version>2014.11</version>
+	  	</dependency>
+
+	  	<!-- Spark streaming Kafka dependency -->
+		<dependency>
+		    <groupId>org.apache.spark</groupId>
+		    <artifactId>spark-streaming-kafka_2.10</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+
+		<!-- SizeEstimator dependency -->
+		<dependency>
+			<groupId>com.madhukaraphatak</groupId>
+			<artifactId>java-sizeof_2.10</artifactId>
+			<version>0.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.typesafe.scala-logging/scala-logging-slf4j_2.10 -->
+		<dependency>
+		    <groupId>com.typesafe.scala-logging</groupId>
+		    <artifactId>scala-logging-slf4j_2.10</artifactId>
+		    <version>2.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.7.12</version>
+		</dependency>
+
+    </dependencies>
+</project>
