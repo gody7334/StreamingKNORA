@@ -1,5 +1,4 @@
-
-distributedWekaSpark  
+StreamingKNORA 
 ========
 <br>
 <img src="https://travis-ci.org/ariskk/distributedWekaSpark.svg?branch=master" alt="Build Status" style="max-width:100%;">
@@ -11,13 +10,13 @@ on a Spark cluster.
 This project was developed in the School of Computer Science of the University of Manchester 
 as part of my MSc dissertation under the supervision of Professor John A. Keane (john.keane@manchester.ac.uk).
 Additional involved staff:
-Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk);
-Dr. Goran Nenadic (gnenadic@manchester.ac.uk).
-
-The work was partially supported by an IBM Faculty Award (Big Data Engineering).
+Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk).
 
 Currently this project supports classification/regression (any Weka Classifier) training and evaluation, Canopy Clustering 
 and Association Rule Learning.
+
+MOA
+KNORA
 
 The classification/reggresion classes were based on the <b>excellent</b> work of Dr. Mark Hall (http://markahall.blogspot.co.uk/2013/10/weka-and-hadoop-part-1.html) 
 on porting Weka to Hadoop.
