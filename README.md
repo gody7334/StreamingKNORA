@@ -13,6 +13,16 @@ Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk).
 Currently this project supports classification/regression (any Weka Classifier) training and evaluation, Canopy Clustering 
 and Association Rule Learning.
 
+Structure
+
+------------------
+Dataset
+
+StreamingKNORA
+
+StreamingKNORA_single
+
+
 MOA
 KNORA
 
