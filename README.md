@@ -5,13 +5,10 @@ This repository contains Streaming-KNORA (S-KNORA), an algorithm designed to ana
 
 This project was developed in the School of Computer Science of the University of Manchester as part of my MSc dissertation under the supervision of Professor John A. Keane (john.keane@manchester.ac.uk). Additional involved staff: Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk).
 
-This project was a proof of concept that aimed to demonstrate the feasibility of using KNORA ensemble learning on high throughput streaming data.
-
-Results show that: <br />
+This project was a proof of concept that aimed to demonstrate the feasibility of using KNORA ensemble learning on high throughput streaming data. Results show that: <br />
 1. S-KNORA can learn concepts on disjoint streaming data and achieve higher accuracy than the single streaming learning mode;
 2. the pipeline's throughput, running with a large batch size, is up to 6.82 times than the pipeline running on a single thread;
 3. to capture severe concept drift, batch-incremental learning requires more frequent model update in a small batch causing high overhead in a distributed environment.
-
 
 ## Repository layout<br />
 __./Dataset_Single:__ the datasets used in StreamingKNORA_Single experiments<br />
