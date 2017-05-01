@@ -1,9 +1,9 @@
-StreamingKNORA_Single
+StreamingKNORA-Single
 ========
-This folder contains S-KNORA single thread implementation using Java. This implementation is used to select optimal batch and used as the baseline for distributed version.
+This folder contains S-KNORA implementation using Java. This implementation is used to select optimal batch and used as the baseline for distributed version.
 
 ## Build
-This is a Maven project. To compile the project, run:
+using Maven, This is a Maven project. To compile the project, run:
 
 ```mvn clean package```
 
