@@ -1,39 +1,17 @@
-StreamingKNORA 
-========
-<br>
-<img src="https://travis-ci.org/ariskk/distributedWekaSpark.svg?branch=master" alt="Build Status" style="max-width:100%;">
-
-This repository contains Streaming-KNORA algorithm for the Apache Spark distributed computing framework, as well as a set of utilities and a commmand line interface that enable the execution of Streaming Data Analysis jobs on a Spark cluster.
-
-This project was developed in the School of Computer Science of the University of Manchester 
-as part of my MSc dissertation under the supervision of Professor John A. Keane (john.keane@manchester.ac.uk).
-Additional involved staff:
-Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk).
-
-Currently this project supports classification/regression (any Weka Classifier) training and evaluation, Canopy Clustering 
-and Association Rule Learning.
-
-Structure
-
-------------------
-Dataset
-
 StreamingKNORA
+========
 
-StreamingKNORA_single
+This repository contains Streaming-KNORA (S-KNORA), an algorithm designed to analyse streaming data in a distributed environment. S-KNORA is implemented using Spark across multiple Hadoop nodes.
 
+This project was developed in the School of Computer Science of the University of Manchester as part of my MSc dissertation under the supervision of Professor John A. Keane (john.keane@manchester.ac.uk). Additional involved staff: Dr. Firat Tekiner (firat.tekiner@manchester.ac.uk).
 
-MOA
-KNORA
+## Repository layout<br />
+__./Dataset_Single:__ the datasets used in StreamingKNORA_Single experiments<br />
+__./Dataset_Spark:__ the datasets used in StreamingKNORA_Spark experiments<br />
+__./StreamingKNORA_Single:__ A Java implementation for batch size selection and  baseline single thread<br />
+__./StreamingKNORA_Spark:__ A Spark implementation for performance evaluation on Spark <br />
 
-The classification/reggresion classes were based on the <b>excellent</b> work of Dr. Mark Hall (http://markahall.blogspot.co.uk/2013/10/weka-and-hadoop-part-1.html) 
-on porting Weka to Hadoop.
-The Association Rule Learning classes are based on a MapReduce implementation of the Partition algorithm 
-(R. Agrawal,J. C. Shafer, "Parallel mining of association rules." IEEE Transactions
-on knowledge and Data Engineering 8, no. 6,p 962-969, 1996.)
-
-The Kryo Serialisers for Weka were taken from https://github.com/vpa1977/stormmoa (a very interesting integration of MOA into Storm).
-
+---------
 This project was a proof of concept that aimed to demonstrate the feasibility of using Weka's libraries on
 Big Data problems and to study the effects of different caching strategies on Big Data Mining workloads.
 
@@ -46,9 +24,9 @@ Currently, only <b>CSV</b> files can be processed.
 
 The classifier evaluation classes have been successfully ported and executed on top of <b>Spark Streaming</b>. I will upload the code in a separate repository.
 
-This is a Maven project. Building with Maven (goal: package) would yield a deployable uber-jar that 
+This is a Maven project. Building with Maven (goal: package) would yield a deployable uber-jar that
 can be directly executed on a Spark cluster.
- 
+
 Execution
 ========
 
@@ -70,7 +48,3 @@ I will try to add unit tests, Travis, Logging and error handling as soon as I ha
 
 
 More to follow..
-
-
-
-
