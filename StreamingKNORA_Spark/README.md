@@ -3,12 +3,12 @@ StreamingKNORA-Spark
 This folder contains S-KNORA implementation using Spark for performance evaluation. Evaluation involves testing various parameters on different datasets to measure accuracy and throughput, and monitor resource utilization.
 
 ## Build
-using Maven, This is a Maven project. To compile the project, run:
+This project is built using Apache Maven. To build the project, run:
 
 ```mvn clean package```
 
 ## Execution
-After compiling mvn project, run following example command:
+After build the project, run following example command:
 ```
 /root/spark/bin/spark-submit \
 	--class main.scala.BatchMain \
