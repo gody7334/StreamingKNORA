@@ -1,14 +1,13 @@
 StreamingKNORA-Single
 ========
-This folder contains S-KNORA implementation using Java. This implementation is used to select optimal batch and used as the baseline for distributed version.
+This folder contains S-KNORA implementation using Java. This implementation is considered as an ideal program without overhead and used to select optimal batch size.
 
 ## Build
-using Maven, This is a Maven project. To compile the project, run:
-
+This project is built using Apache Maven. To build the project, run:
 ```mvn clean package```
 
 ## Execution
-After compiling mvn project, run following example command:
+After build the project, run following example command:
 ```
 java -classpath ./target/MOA-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.MOA.main.MainKNORA \
 num_models:64 \

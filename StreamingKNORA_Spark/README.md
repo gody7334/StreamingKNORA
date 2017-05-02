@@ -1,6 +1,6 @@
 StreamingKNORA-Spark
 ========
-This folder contains S-KNORA implementation using Spark. This implementation is used to select optimal batch and used as the baseline for distributed version.
+This folder contains S-KNORA implementation using Spark for performance evaluation. Evaluation involves testing various parameters on different datasets to measure accuracy and throughput, and monitor resource utilization.
 
 ## Build
 using Maven, This is a Maven project. To compile the project, run:

@@ -13,5 +13,5 @@ This project was a proof of concept that aimed to demonstrate the feasibility of
 ## Repository layout<br />
 __./Dataset_Single:__ the datasets used in StreamingKNORA_Single experiments<br />
 __./Dataset_Spark:__ the datasets used in StreamingKNORA_Spark experiments<br />
-__./StreamingKNORA_Single:__ A Java implementation for batch size selection and  baseline single thread<br />
+__./StreamingKNORA_Single:__ A Java implementation for batch size selection; it is also considered as an ideal program without overhead.<br />
 __./StreamingKNORA_Spark:__ A Spark implementation for performance evaluation on Spark <br />
