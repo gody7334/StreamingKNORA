@@ -32,17 +32,17 @@ After build the project, copy the .jar and header files to the cluster's master 
 ```
 
 ## Parameters
-- Dataset_HDFS: the dataset stored in cluster's HDFS, which can be Cover_SD.arff, Poker_SD.arff, RRBF_NoDrift_10a_1M_SD.arff, RRBF_Drift0.0001_10a_1M_SD.arff, RRBF_Drift0.001_10a_1M_SD.arff, HyperD0.0001A10_SD.arff or HyperD0.001A10_SD.arff
-- Dataset_header: the header file which can be Cover_H.arff, Poker_H.arff or RRBF_10a_H.arff
-- num_Models:ensemble size
-- ModelType: streaming model which can be ASHoeffdingTree or HoeffdingTree
-- num_validate: number of validation instance for KNORA
-- num_neighbour: number of nearest neighbour for KNORA
-- isIntersect: true(interset), false(union)
-- num_train_batch: training batch size
-- num_validate_batch: validation batch size
-- num_test_batch: testing batch size
-- num_warmup_perModel: number of instance for warming up streaming model
-- num_val_test_repartition: should be same to --total-executor-cores
-- max_tree_depth: max tree depth for ASHoeffdingTree 
-- numOfData: number of instance in the dataset
+- __Dataset_HDFS:__ the dataset stored in cluster's HDFS, which can be Cover_SD.arff, Poker_SD.arff, RRBF_NoDrift_10a_1M_SD.arff, RRBF_Drift0.0001_10a_1M_SD.arff, RRBF_Drift0.001_10a_1M_SD.arff, HyperD0.0001A10_SD.arff or HyperD0.001A10_SD.arff
+- __Dataset_header:__ the header file which can be Cover_H.arff, Poker_H.arff or RRBF_10a_H.arff
+- __num_Models:__ ensemble size
+- __ModelType:__ streaming model which can be ASHoeffdingTree or HoeffdingTree
+- __num_validate:__ number of validation instance for KNORA
+- __num_neighbour:__ number of nearest neighbour for KNORA
+- __isIntersect:__ true(interset), false(union)
+- __num_train_batch:__ training batch size
+- __num_validate_batch:__ validation batch size
+- __num_test_batch:__ testing batch size
+- __num_warmup_perModel:__ number of instance for warming up streaming model
+- __num_val_test_repartition:__ should be same to --total-executor-cores
+- __max_tree_depth:__ max tree depth for ASHoeffdingTree 
+- __numOfData:__ number of instance in the dataset
