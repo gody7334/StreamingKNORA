@@ -8,7 +8,7 @@ This project is built using Apache Maven. To build the project, run:
 ```mvn clean package```
 
 ## Execution
-After build the project, run following example command:
+After build the project, copy the .jar and header files to the cluster's master node and execute the following example command:
 ```
 /root/spark/bin/spark-submit \
 	--class main.scala.BatchMain \
@@ -32,14 +32,17 @@ After build the project, run following example command:
 ```
 
 ## Parameters
-- num_models:
-- num_insts:
-- num_warmups:
-- num_Val:
-- num_neighbour:
-- intersect:
-- train_batch_size:
-- validate_batch_size:
-- test_batch_size:
-- dataset_file:
-- classifier:
+- Dataset_HDFS: the dataset stored in cluster's HDFS, which can be Cover_SD.arff, Poker_SD.arff, RRBF_NoDrift_10a_1M_SD.arff, RRBF_Drift0.0001_10a_1M_SD.arff, RRBF_Drift0.001_10a_1M_SD.arff, HyperD0.0001A10_SD.arff or HyperD0.001A10_SD.arff
+- Dataset_header: the header file which can be Cover_H.arff, Poker_H.arff or RRBF_10a_H.arff
+- num_Models:ensemble size
+- ModelType: streaming model which can be ASHoeffdingTree or HoeffdingTree
+- num_validate: number of validation instance for KNORA
+- num_neighbour: number of nearest neighbour for KNORA
+- isIntersect: true(interset), false(union)
+- num_train_batch: training batch size
+- num_validate_batch: validation batch size
+- num_test_batch: testing batch size
+- num_warmup_perModel: number of instance for warming up streaming model
+- num_val_test_repartition: should be same to --total-executor-cores
+- max_tree_depth: max tree depth for ASHoeffdingTree 
+- numOfData: number of instance in the dataset

@@ -29,10 +29,10 @@ classifier:AHT
 - num_insts: number of instance in the dataset
 - num_warmups: number of instance for warming up streaming model
 - num_Val: number of validation instance for KNORA
-- num_neighbour: number of neighbour for KNORA
+- num_neighbour: number of nearest neighbour for KNORA
 - intersect: 1(interset), 0(union)
 - train_batch_size: training batch size
 - validate_batch_size: validation batch size
 - test_batch_size: testing batch size
-- dataset_file: Poker, Cover, RRBFno, RRBF0.0001, RRBF0.001, HYP0.0001, HYP0.001
-- classifier: AHT, HT, SGD, NB
+- dataset_file: can be Poker, Cover, RRBFno, RRBF0.0001, RRBF0.001, HYP0.0001 or HYP0.001
+- classifier: can be AHT, HT, SGD or NB
