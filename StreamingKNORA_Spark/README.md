@@ -1,6 +1,6 @@
 StreamingKNORA-Spark
 ========
-This folder contains S-KNORA implementation using Spark for performance evaluation. Evaluation involves testing various parameters on different datasets to measure accuracy and throughput, and monitor resource utilization.
+This folder contains S-KNORA implementation using Spark for performance evaluation. Evaluation involves testing various parameters on different datasets to measure throughput and monitor resource utilization.
 
 ## Build
 This project is built using Apache Maven. To build the project, run:
